@@ -1,0 +1,7 @@
+name = "dalia-khan-dds"
+compatibility_date = "2024-01-01"
+
+# Static assets configuration - deploy only the out directory
+[assets]
+directory = "./out"
+

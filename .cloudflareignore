@@ -1,0 +1,71 @@
+# Dependencies - should never be deployed
+node_modules/
+.pnp
+.pnp.js
+
+# Build artifacts and cache
+.next/
+.nuxt/
+.cache/
+dist/
+build/
+
+# Source files - only the out directory should be deployed
+app/
+components/
+lib/
+*.ts
+*.tsx
+*.js
+*.jsx
+!out/**/*.js
+!out/**/*.css
+
+# Configuration files (not needed in deployment)
+tsconfig.json
+tailwind.config.ts
+postcss.config.mjs
+next.config.js
+.eslintrc.json
+.gitignore
+.cloudflareignore
+
+# Development files
+.env*.local
+.env
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# IDE and OS files
+.DS_Store
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Git
+.git/
+.gitignore
+
+# Documentation
+README.md
+*.md
+
+# TypeScript
+*.tsbuildinfo
+next-env.d.ts
+
+# Vercel (if present)
+.vercel
+
+# Testing
+coverage/
+.nyc_output/
+
+# Large native binaries (the problematic file)
+**/next-swc.*.node
+**/@next/swc-*/
+

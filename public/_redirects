@@ -1,2 +1,2 @@
-/*    /index.html   200
-
+# Next.js static export with trailingSlash: true generates proper directory structure
+# Cloudflare will serve the files correctly without redirects
