@@ -1,12 +1,6 @@
 name = "dalia-khan-dds"
 compatibility_date = "2024-01-01"
 
-# Static site configuration - deploy only the out directory
-[site]
-bucket = "./out"
-
-# Exclude patterns (additional safety measure)
-# Note: .cloudflareignore will also be used
-[build]
-command = "npm run build"
+# Note: For static sites, use 'wrangler pages deploy out' instead of 'wrangler deploy'
+# This configuration file is kept for reference but Pages deployment doesn't require it
 
