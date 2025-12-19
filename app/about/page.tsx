@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import { aboutContent, benefits } from '@/lib/data';
 
 export default function About() {
@@ -40,8 +41,13 @@ export default function About() {
             </div>
           </div>
           <div className="relative">
-            <div className="bg-gray-200 rounded-lg aspect-square flex items-center justify-center">
-              <span className="text-gray-400 text-lg">Professional Photo</span>
+            <div className="rounded-lg overflow-hidden aspect-square">
+              <Image
+                src="/images/about.png"
+                alt="Dr. Dalia Khan"
+                fill
+                className="object-cover"
+              />
             </div>
           </div>
         </div>
