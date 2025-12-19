@@ -24,7 +24,7 @@ export default function TestimonialCard({ testimonial }: TestimonialCardProps) {
         {renderStars(testimonial.rating)}
       </div>
       <blockquote className="text-gray-700 leading-relaxed mb-4 italic">
-        "{testimonial.text}"
+        &ldquo;{testimonial.text}&rdquo;
       </blockquote>
       <div className="text-gray-900 font-semibold">
         — {testimonial.name}
