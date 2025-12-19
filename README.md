@@ -51,10 +51,12 @@ The static files will be generated in the `out` directory, ready for deployment.
    - Connect your Git repository
 
 3. **Configure Build Settings**:
-   - **Framework preset**: Next.js (Static HTML Export)
+   - **Framework preset**: `None` or `Static Site` (IMPORTANT: Do NOT use "Next.js" preset as it may try to use Workers)
    - **Build command**: `npm run build`
    - **Build output directory**: `out`
    - **Root directory**: `/` (or leave empty if repository root)
+   
+   **Important**: If you see Wrangler/Workers errors, ensure the framework preset is set to "None" or "Static Site", not "Next.js". This is a static export and should be deployed as a static site, not as a Cloudflare Worker.
 
 4. **Environment Variables** (if needed):
    - Add any required environment variables in the Cloudflare Pages dashboard
@@ -97,6 +99,24 @@ The static files will be generated in the `out` directory, ready for deployment.
 Cloudflare Pages automatically deploys:
 - **Production**: Every push to your main/master branch
 - **Preview**: Every pull request gets a preview deployment
+
+### Troubleshooting
+
+**Issue: Wrangler/Workers deployment error**
+
+If you see errors about Wrangler or Workers during deployment:
+
+1. **Check Framework Preset**: In Cloudflare Pages dashboard → Settings → Builds & deployments:
+   - Set Framework preset to `None` or `Static Site`
+   - Do NOT use "Next.js" preset (it may try to use Cloudflare Workers)
+
+2. **Verify Build Output**: 
+   - Ensure Build output directory is set to `out`
+   - After building locally with `npm run build`, verify the `out` directory contains HTML files
+
+3. **Build Command**: Should be exactly `npm run build` (no additional flags needed)
+
+4. **Static Files**: The `_redirects` file in the `public` folder will be automatically copied to `out` during build for proper routing
 
 ## Project Structure
 
